@@ -24,6 +24,8 @@ public:
     void enableCallerID();
     String getSignalStrength();
     String getOperator();
+    String getSMSC();
+    void setSMSC(const String &smsc);
 
     // LTE data
     void setupAPN(const String &apn);
