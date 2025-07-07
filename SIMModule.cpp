@@ -17,7 +17,6 @@ void SIMModule::sendAT(const String &cmd, uint32_t timeout) {
     _serial.println(cmd);
     uint32_t t = millis();
     while (millis() - t < timeout) {
-        if (check(EscPress)) break;
         while (_serial.available()) { Serial.write(_serial.read()); }
     }
 }
@@ -27,7 +26,6 @@ String SIMModule::sendATWithResponse(const String &cmd, uint32_t timeout) {
     String response;
     uint32_t t = millis();
     while (millis() - t < timeout) {
-        if (check(EscPress)) break;
         while (_serial.available()) {
             char c = _serial.read();
             response += c;
