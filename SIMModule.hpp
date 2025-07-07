@@ -3,8 +3,7 @@
 
 #include <Arduino.h>
 // #include "globals.h"
-extern volatile bool EscPress;
-extern bool check(volatile bool &btn);
+
 typedef void (*CallCallback)(const String &callerNumber);
 typedef void (*SMSCallback)(const String &sender, const String &message);
 
