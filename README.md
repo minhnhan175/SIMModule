@@ -17,4 +17,4 @@ For example:
 HardwareSerial SIMSerial(1);
 ```
 Then, include the library and define a variable for the library with RX and TX pins
-Finally, you can use functions from the library to serve your purposes!
+Finally, you can also use the functions from the library to serve for your projects!
