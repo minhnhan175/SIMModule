@@ -145,7 +145,10 @@ String SIMModule::sendUSSDChecked(const String &code) {
         return "ERROR: Invalid MMI code";
     }
 }
-
+String SIMModule::getSMSC() { return sendATWithResponse("AT+CSCA?", 1000); }
+void SIMModule::setSMSC(const String &smsc) {
+    sendAT("AT+CSCA=\"" + smsc + "\",145"); // with 145 is international format (+)
+}
 void SIMModule::end() {
     _serial.end();
     Serial.println("SIM Module connection closed.");
